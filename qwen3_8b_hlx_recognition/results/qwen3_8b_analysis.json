@@ -1,0 +1,32 @@
+{
+  "experiment_id": "QWEN3_8B_HLX_001",
+  "timestamp": "2025-12-18T10:19:14.855360Z",
+  "metrics": {
+    "a1_determinism": {
+      "baseline": 0.9,
+      "post_corpus": 0.8,
+      "delta": -0.09999999999999998,
+      "percent_change": -11.111111111111107
+    },
+    "a2_reversibility": {
+      "baseline": 1.0,
+      "post_corpus": 1.0,
+      "delta": 0.0,
+      "percent_change": 0.0
+    },
+    "a3_bijection": {
+      "baseline": 1.0,
+      "post_corpus": 1.0,
+      "delta": 0.0,
+      "percent_change": 0.0
+    },
+    "hallucination_rate": {
+      "baseline": 0.0,
+      "post_corpus": 1.0,
+      "delta": 1.0,
+      "percent_change": Infinity
+    }
+  },
+  "verdict": "NO_CLEAR_PATTERN",
+  "hypothesis": "INCONCLUSIVE"
+}

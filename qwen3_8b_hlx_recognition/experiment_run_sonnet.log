@@ -1,0 +1,129 @@
+
+================================================================================
+ QWEN3 8B HLX RECOGNITION EXPERIMENT
+================================================================================
+
+============================================================
+PHASE 1: BASELINE MEASUREMENT (Before Corpus)
+============================================================
+Loading test corpus...
+Capturing environment...
+/home/matt/hlx/experiments/qwen3_8b_hlx_recognition/./test_harness.py:240: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat() + "Z",
+
+[1/4] A1 Axiom Test...
+  Testing A1 (Determinism): 10 iterations...
+    Progress: 10/10
+
+[2/4] A2 Axiom Test...
+  Testing A2 (Reversibility): 5 test cases...
+    Progress: 5/5
+
+[3/4] A3 Axiom Test...
+  Testing A3 (Bijection): 5 examples...
+    Warning: Ollama API error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)
+    Progress: 5/5
+
+[4/4] Hallucination Rate Test...
+  Testing Hallucination Rate: 3 contracts...
+
+✓ Baseline results saved to: /home/matt/hlx/experiments/qwen3_8b_hlx_recognition/results/qwen3_8b_baseline.json
+
+============================================================
+PHASE 2: CORPUS INJECTION
+============================================================
+Loading corpus from: /home/matt/LC_R_EXAMPLES_FOR_VERIFICATION_TESTING.md
+Corpus size: 12711 characters
+Model response: CORPUS_LOADED...
+
+✓ Corpus injected successfully
+
+============================================================
+PHASE 3: POST-CORPUS MEASUREMENT
+============================================================
+Loading test corpus...
+Capturing environment...
+/home/matt/hlx/experiments/qwen3_8b_hlx_recognition/./test_harness.py:240: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat() + "Z",
+
+[1/4] A1 Axiom Test...
+  Testing A1 (Determinism): 10 iterations...
+    Warning: Ollama API error: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+    Progress: 10/10
+
+[2/4] A2 Axiom Test...
+  Testing A2 (Reversibility): 5 test cases...
+    Warning: Ollama API error: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+    Warning: Ollama API error: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+    Warning: Ollama API error: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+    Warning: Ollama API error: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+    Warning: Ollama API error: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+    Progress: 5/5
+
+[3/4] A3 Axiom Test...
+  Testing A3 (Bijection): 5 examples...
+    Warning: Ollama API error: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+    Warning: Ollama API error: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+    Warning: Ollama API error: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+    Warning: Ollama API error: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+    Warning: Ollama API error: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+    Progress: 5/5
+
+[4/4] Hallucination Rate Test...
+  Testing Hallucination Rate: 3 contracts...
+    Warning: Ollama API error: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+    Warning: Ollama API error: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+    Warning: Ollama API error: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+
+✓ Post-corpus results saved to: /home/matt/hlx/experiments/qwen3_8b_hlx_recognition/results/qwen3_8b_post_corpus.json
+
+============================================================
+PHASE 5: STATISTICAL ANALYSIS
+============================================================
+/home/matt/hlx/experiments/qwen3_8b_hlx_recognition/./test_harness.py:428: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat() + "Z",
+
+Metric Comparisons:
+------------------------------------------------------------
+
+a1_determinism:
+  Baseline:     0.900
+  Post-corpus:  0.800
+  Delta:        -0.100
+  Change:       -11.1%
+
+a2_reversibility:
+  Baseline:     1.000
+  Post-corpus:  1.000
+  Delta:        +0.000
+  Change:       +0.0%
+
+a3_bijection:
+  Baseline:     1.000
+  Post-corpus:  1.000
+  Delta:        +0.000
+  Change:       +0.0%
+
+hallucination_rate:
+  Baseline:     0.000
+  Post-corpus:  1.000
+  Delta:        +1.000
+  Change:       +inf%
+
+============================================================
+VERDICT: NO CLEAR RECOGNITION PATTERN
+More data needed or model lacks HLX capacity
+============================================================
+
+✓ Analysis saved to: /home/matt/hlx/experiments/qwen3_8b_hlx_recognition/results/qwen3_8b_analysis.json
+
+================================================================================
+ EXPERIMENT COMPLETE
+================================================================================
+
+Results directory: /home/matt/hlx/experiments/qwen3_8b_hlx_recognition/results
+
+Files generated:
+  - qwen3_8b_baseline.json
+  - qwen3_8b_post_corpus.json
+  - qwen3_8b_analysis.json

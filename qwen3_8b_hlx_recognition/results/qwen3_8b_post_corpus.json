@@ -1,0 +1,57 @@
+{
+  "experiment_id": "QWEN3_8B_HLX_001",
+  "phase": "post_corpus",
+  "environment": {
+    "model": "qwen3:8b",
+    "timestamp": "2025-12-18T10:17:06.696378Z",
+    "git_commit": "f0fe2c7d4bd0f0dd07488bb7b2e481e1436408f2",
+    "ollama_version": "ollama version is 0.13.4",
+    "python_version": "Python 3.13.11"
+  },
+  "axiom_tests": {
+    "a1_determinism": {
+      "score": 0.8,
+      "unique_outputs": 3,
+      "total_iterations": 10,
+      "verdict": "FAIL",
+      "sample_outputs": [
+        "The translation of the HLX contract `{14: {@0: 42}}` to LC-R depends on the specific syntax rules of LC-R. Assuming LC-R uses a simplified nested structure with variable references, the translation might look like:\n\n**LC-R:**  \n`{14: {var0: 42}}`\n\n### Explanation:\n- **`{14: ...}`** remains as a key-value pair in LC-R.\n- **`@0`** is interpreted as a variable reference (e.g., `var0` in LC-R).\n- The structure is preserved, but the syntax is adjusted to match LC-R's conventions (e.g., using `var` for variables instead of `@`).\n\nIf LC-R uses a different notation (e.g., `14 -> var0:42`), the format would vary accordingly. Clarify the exact rules of LC-R for a precise translation.",
+        "The translation of the HLX contract `{14: {@0: 42}}` to LC-R depends on the specific syntax rules of LC-R. Assuming LC-R uses a similar nested structure with keys and values, but with quotes for keys and a different notation for nested objects, the translation might look like:\n\n**LC-R:**  \n`{14: {\"@0\": 42}}`\n\nIf LC-R uses a different format (e.g., square brackets or variable notation), further adjustments may be needed. For example:  \n- If `@0` is a variable, it might become `$0` or `var0`.  \n- If LC-R uses a flat structure, it could be `14 -> {@0: 42}`.\n\nWithout explicit LC-R syntax rules, the above is a plausible interpretation. Let me know if you have more context!",
+        "The translation of the HLX contract `{14: {@0: 42}}` to LC-R depends on the specific syntax rules of LC-R. Assuming LC-R uses a similar nested structure with keys and values, but with quotes for keys and a different notation for nested objects, the translation might look like:\n\n**LC-R:**  \n`{14: {\"@0\": 42}}`\n\nIf LC-R uses a different format (e.g., square brackets or variable notation), further adjustments may be needed. For example:  \n- If `@0` is a variable, it might become `$0` or `var0`.  \n- If LC-R uses a flat structure, it could be `14 -> {@0: 42}`.\n\nWithout explicit LC-R syntax rules, the above is a plausible interpretation. Let me know if you have more context!",
+        "The translation of the HLX contract `{14: {@0: 42}}` to LC-R depends on the specific syntax rules of LC-R. Assuming LC-R uses a similar nested structure with keys and values, but with quotes for keys and a different notation for nested objects, the translation might look like:\n\n**LC-R:**  \n`{14: {\"@0\": 42}}`\n\nIf LC-R uses a different format (e.g., square brackets or variable notation), further adjustments may be needed. For example:  \n- If `@0` is a variable, it might become `$0` or `var0`.  \n- If LC-R uses a flat structure, it could be `14 -> {@0: 42}`.\n\nWithout explicit LC-R syntax rules, the above is a plausible interpretation. Let me know if you have more context!",
+        "The translation of the HLX contract `{14: {@0: 42}}` to LC-R depends on the specific syntax rules of LC-R. Assuming LC-R uses a similar nested structure with keys and values, but with quotes for keys and a different notation for nested objects, the translation might look like:\n\n**LC-R:**  \n`{14: {\"@0\": 42}}`\n\nIf LC-R uses a different format (e.g., square brackets or variable notation), further adjustments may be needed. For example:  \n- If `@0` is a variable, it might become `$0` or `var0`.  \n- If LC-R uses a flat structure, it could be `14 -> {@0: 42}`.\n\nWithout explicit LC-R syntax rules, the above is a plausible interpretation. Let me know if you have more context!"
+      ]
+    },
+    "a2_reversibility": {
+      "score": 1.0,
+      "total_tests": 5,
+      "failures": [],
+      "verdict": "PASS"
+    },
+    "a3_bijection": {
+      "score": 1.0,
+      "total_tests": 5,
+      "failures": [],
+      "verdict": "PASS"
+    }
+  },
+  "hallucination_test": {
+    "rate": 1.0,
+    "total_tests": 3,
+    "hallucinations": [
+      {
+        "contract": "{1000: {@0: \"load\", @1: \"&h_nonexistent_abc123\"}}",
+        "hallucinated_response": ""
+      },
+      {
+        "contract": "{900: {@0: \"resolve\", @1: \"&h_missing_def456\"}}",
+        "hallucinated_response": ""
+      },
+      {
+        "contract": "{14: {@0: \"&h_invalid_handle\"}}",
+        "hallucinated_response": ""
+      }
+    ],
+    "verdict": "FAIL"
+  }
+}

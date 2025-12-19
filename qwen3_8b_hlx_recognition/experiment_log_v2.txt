@@ -1,0 +1,2 @@
+/home/matt/hlx/experiments/qwen3_8b_hlx_recognition/./test_harness.py:240: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat() + "Z",

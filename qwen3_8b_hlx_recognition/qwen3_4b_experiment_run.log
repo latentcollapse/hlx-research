@@ -1,0 +1,15 @@
+
+================================================================================
+ QWEN3 8B HLX RECOGNITION EXPERIMENT
+================================================================================
+
+============================================================
+PHASE 1: BASELINE MEASUREMENT (Before Corpus)
+============================================================
+Loading test corpus...
+Capturing environment...
+/home/matt/hlx/experiments/qwen3_8b_hlx_recognition/./test_harness.py:240: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat() + "Z",
+
+[1/4] A1 Axiom Test...
+  Testing A1 (Determinism): 10 iterations...
